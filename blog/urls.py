@@ -18,6 +18,5 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('accounts/', include('allauth.urls')),
 
 ]

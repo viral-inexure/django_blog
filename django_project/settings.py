@@ -30,12 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
-    'allauth.socialaccount.providers.facebook',
-    'django.contrib.sites',
-
 ]
-SITE_ID = 1
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -46,10 +41,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
+
 
 ]
-SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -67,7 +61,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social_django.context_processors.backends',
-                'django.template.context_processors.request',
                 'social_django.context_processors.login_redirect',
             ],
         },
@@ -109,8 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-
 ]
 
 
@@ -153,21 +144,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER') #"viralmalaviya.inexture@gmail.com"
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS') #"Viral2k21@"
 
-SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
-
-
-# SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
-# SOCIAL_AUTH_FACEBOOK_SECRET ='8dca0e6da0533cf5d9d5b5d58fa6d7b7'
-
-SOCIALACCOUNT_PROVIDERS = {
-    'facebook': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'secret': '8dca0e6da0533cf5d9d5b5d58fa6d7b7',
-            'key': '529094848318112'
-        }
-    }
-}
+SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
+SOCIAL_AUTH_FACEBOOK_SECRET ='8dca0e6da0533cf5d9d5b5d58fa6d7b7'
