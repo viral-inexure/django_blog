@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
+    'social.apps.django_app.default',
+
 ]
 
 MIDDLEWARE = [
@@ -102,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
-    'social_core.backends.linkedin.LinkedinOAuth2',
+    'social.backends.linkedin.LinkedinOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
@@ -149,7 +151,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS') #"Viral2k21@"
 
 SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
 SOCIAL_AUTH_FACEBOOK_SECRET ='8dca0e6da0533cf5d9d5b5d58fa6d7b7'
-
 
 SOCIAL_AUTH_GITHUB_KEY = 'ba88907fe5086c12cf53'
 SOCIAL_AUTH_GITHUB_SECRET ='336f794d7eefbd82658232c162f37f30620f8791'
