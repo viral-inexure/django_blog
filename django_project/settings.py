@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'allauth.socialaccount.providers.facebook',
+    'django.contrib.sites',
 
 ]
 SITE_ID = 1
