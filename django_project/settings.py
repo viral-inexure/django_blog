@@ -133,5 +133,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER') #"viralmalaviya.inexture@gmail.com"
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS') #"Viral2k21@"
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
+SOCIAL_AUTH_FACEBOOK_SECRET ='8dca0e6da0533cf5d9d5b5d58fa6d7b7'
