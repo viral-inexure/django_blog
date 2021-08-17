@@ -102,6 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.linkedin.LinkedinOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
@@ -152,4 +153,7 @@ SOCIAL_AUTH_FACEBOOK_SECRET ='8dca0e6da0533cf5d9d5b5d58fa6d7b7'
 
 SOCIAL_AUTH_GITHUB_KEY = 'ba88907fe5086c12cf53'
 SOCIAL_AUTH_GITHUB_SECRET ='336f794d7eefbd82658232c162f37f30620f8791'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
 
