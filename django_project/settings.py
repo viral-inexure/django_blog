@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.github", # new
     "allauth.socialaccount.providers.facebook", # new
     "allauth.socialaccount.providers.google", # new
+    'allauth.socialaccount.providers.linkedin',
 ]
 
 MIDDLEWARE = [
@@ -101,8 +102,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# 'Client id':'382307676135-18pce0a3bl4bo9p96ebjq8isuc076atj.apps.googleusercontent.com',
-# 'Secret key': '0GDIM9tBYS2AotawHUPtGbG5',
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -142,15 +141,8 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # "viralmalaviya.inexture@gmail.
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # "Viral2k21@"
 
 
-
-# SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
-# SOCIAL_AUTH_FACEBOOK_SECRET = '8dca0e6da0533cf5d9d5b5d58fa6d7b7'
-#
-# SOCIAL_AUTH_GITHUB_KEY = 'ba88907fe5086c12cf53'
-# SOCIAL_AUTH_GITHUB_SECRET = '336f794d7eefbd82658232c162f37f30620f8791'
-#
-# SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
-# SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
 
 
 AUTHENTICATION_BACKENDS = (
