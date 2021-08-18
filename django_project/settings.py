@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.github", # new
     "allauth.socialaccount.providers.facebook", # new
     "allauth.socialaccount.providers.google", # new
-    'allauth.socialaccount.providers.linkedin',
+    'allauth.socialaccount.providers.linkedin_oauth2',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
+
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -153,3 +155,20 @@ SITE_ID = 2
 ACCOUNT_EMAIL_VERIFICATION = "none"
 # LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_ON_GET = True
+
+SOCIALACCOUNT_PROVIDERS = {
+    'linkedin': {
+        'SCOPE': [
+            'r_basicprofile',
+            'r_emailaddress'
+        ],
+        'PROFILE_FIELDS': [
+            'id',
+            'first-name',
+            'last-name',
+            'email-address',
+            'picture-url',
+            'public-profile-url',
+        ]
+    }
+}
