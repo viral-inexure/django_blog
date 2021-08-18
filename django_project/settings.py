@@ -26,8 +26,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
     'django.contrib.sites',
+    # 3rd party
+    "allauth", # new
+    "allauth.account", # new
+    "allauth.socialaccount", # new
+    # social providers
+    "allauth.socialaccount.providers.github", # new
+    "allauth.socialaccount.providers.facebook", # new
+    "allauth.socialaccount.providers.google", # new
 ]
 
 MIDDLEWARE = [
@@ -57,8 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -92,13 +98,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
-
-AUTHENTICATION_BACKENDS = [
-    'social_core.backends.facebook.FacebookOAuth2',
-    'social_core.backends.github.GithubOAuth2',
-    'social_core.backends.linkedin.LinkedinOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
 ]
 
 
@@ -143,13 +142,22 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # "viralmalaviya.inexture@gmail.
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # "Viral2k21@"
 
 
+
+# SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
+# SOCIAL_AUTH_FACEBOOK_SECRET = '8dca0e6da0533cf5d9d5b5d58fa6d7b7'
+#
+# SOCIAL_AUTH_GITHUB_KEY = 'ba88907fe5086c12cf53'
+# SOCIAL_AUTH_GITHUB_SECRET = '336f794d7eefbd82658232c162f37f30620f8791'
+#
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
+# SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
+
+
+AUTHENTICATION_BACKENDS = (
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
 SITE_ID = 2
-
-SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
-SOCIAL_AUTH_FACEBOOK_SECRET = '8dca0e6da0533cf5d9d5b5d58fa6d7b7'
-
-SOCIAL_AUTH_GITHUB_KEY = 'ba88907fe5086c12cf53'
-SOCIAL_AUTH_GITHUB_SECRET = '336f794d7eefbd82658232c162f37f30620f8791'
-
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
+ACCOUNT_EMAIL_VERIFICATION = "none"
+# LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_ON_GET = True

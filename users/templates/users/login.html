@@ -1,5 +1,7 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
+{% providers_media_js %}
 {% block content %}
     <div class="content-section">
         <form method="POST">
@@ -11,11 +13,13 @@
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Login</button>
                 <div class="multiple_login my-3">
-                    <a type="button" class="btn btn-outline-primary" href="{% url 'social:begin' 'facebook' %}">Facebook</a>
-                    <a type="button" class="btn btn-outline-secondary" href="#">Google</a>
-                    <a type="button" class="btn btn-outline-success" href="{% url 'social:begin' 'linkedin-oauth2' %}">LinkedIn</a>
+                    <a type="button" class="btn btn-outline-primary" href="{% provider_login_url 'facebook' %}">Facebook
+                    </a>
+                    <a type="button" class="btn btn-outline-secondary" href="{% provider_login_url 'google' %}">Google
+                    </a>
+                    <a type="button" class="btn btn-outline-success" href="#">LinkedIn</a>
                     <a type="button" class="btn btn-outline-danger" href="#">Twitter</a>
-                    <a type="button" class="btn btn-outline-dark" href="{% url 'social:begin' 'github' %}">GitHub</a>
+                    <a type="button" class="btn btn-outline-dark" href="{% provider_login_url 'github' %}">GitHub</a>
                 </div>
                 <small class="text-muted ml-2">
                     <a href="{% url 'password_reset' %}">Forgot Password?</a>
