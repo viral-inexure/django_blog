@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.facebook", # new
     "allauth.socialaccount.providers.google", # new
     'allauth.socialaccount.providers.linkedin_oauth2',
+    'allauth.socialaccount.providers.instagram',
 ]
 
 MIDDLEWARE = [
@@ -143,10 +144,6 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # "viralmalaviya.inexture@gmail.
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # "Viral2k21@"
 
 
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
-
-
 AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
@@ -167,8 +164,6 @@ SOCIALACCOUNT_PROVIDERS = {
             'first-name',
             'last-name',
             'email-address',
-            'picture-url',
-            'public-profile-url',
         ]
     }
 }
