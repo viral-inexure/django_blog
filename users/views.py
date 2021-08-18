@@ -6,7 +6,6 @@ from .models import User, Profile
 from django.contrib.auth import login
 
 
-
 def UserLogin(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
