@@ -143,7 +143,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # "viralmalaviya.inexture@gmail.
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # "Viral2k21@"
 
 
-SITE_ID = 3
+SITE_ID = 1
 
 SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
 SOCIAL_AUTH_FACEBOOK_SECRET = '8dca0e6da0533cf5d9d5b5d58fa6d7b7'
