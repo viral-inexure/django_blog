@@ -1,9 +1,7 @@
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -14,8 +12,7 @@ SECRET_KEY = 'exhlfdat&vfum(-34*c2uroi(($ww(yo$9pv98=e6p^gl(-eoj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '127.0.0.1', 'localhost:8000', 'my-1-django-app.herokuapp.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost:8000', 'my-1-django-app.herokuapp.com']
 
 # Application definition
 
@@ -30,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
-
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -42,7 +39,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
 
 ]
 
@@ -70,7 +66,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -80,7 +75,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -108,6 +102,9 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
+# 'Client id':'382307676135-18pce0a3bl4bo9p96ebjq8isuc076atj.apps.googleusercontent.com',
+# 'Secret key': '0GDIM9tBYS2AotawHUPtGbG5',
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -121,7 +118,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -130,7 +126,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -144,16 +139,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER') #"viralmalaviya.inexture@gmail.com"
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS') #"Viral2k21@"
-
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # "viralmalaviya.inexture@gmail.com"
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')  # "Viral2k21@"
 
 SOCIAL_AUTH_FACEBOOK_KEY = '529094848318112'
-SOCIAL_AUTH_FACEBOOK_SECRET ='8dca0e6da0533cf5d9d5b5d58fa6d7b7'
+SOCIAL_AUTH_FACEBOOK_SECRET = '8dca0e6da0533cf5d9d5b5d58fa6d7b7'
 
 SOCIAL_AUTH_GITHUB_KEY = 'ba88907fe5086c12cf53'
-SOCIAL_AUTH_GITHUB_SECRET ='336f794d7eefbd82658232c162f37f30620f8791'
+SOCIAL_AUTH_GITHUB_SECRET = '336f794d7eefbd82658232c162f37f30620f8791'
 
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '868gw0kbiq6zw6'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'B0A6hEAeuOs1CJbs'
-
