@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     "allauth.socialaccount.providers.facebook", # new
     "allauth.socialaccount.providers.google", # new
     'allauth.socialaccount.providers.linkedin_oauth2',
-    'allauth.socialaccount.providers.instagram',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +120,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
@@ -152,6 +153,7 @@ SITE_ID = 2
 ACCOUNT_EMAIL_VERIFICATION = "none"
 # LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_ON_GET = True
+
 
 SOCIALACCOUNT_PROVIDERS = {
     'linkedin': {
